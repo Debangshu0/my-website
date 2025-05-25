@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <title>Calculation Result</title>
+</head>
+<body>
+    <h2>Result: {{ matrixoutput }}</h2>
+
+    <!-- Go Back Button -->
+    <form action="{{ url_for('home') }}" method="get">
+        <button type="submit">Go Back</button>
+    </form>
+</body>
+</html>

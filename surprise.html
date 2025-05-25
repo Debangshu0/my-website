@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Surprise NIGGA !!</title>
+  <style>
+    body {
+      margin: 0;
+      height: 100vh;
+      background: linear-gradient(135deg, rgb(255, 229, 81), rgb(102, 127, 203));
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-family: 'Segoe UI Emoji', 'Noto Color Emoji', sans-serif;
+      flex-direction: column;
+      overflow: hidden;
+      position: relative;
+      color: white;
+    }
+
+    /* Improved smooth rainbow arc */
+    .rainbow-arc {
+  width: 500px;
+  height: auto;
+  margin-bottom: -40px;
+  z-index: 1;
+  opacity: 0.95;
+  animation: pulse 2s ease-in-out infinite;
+  pointer-events: none;
+}
+
+    .flash-text {
+      font-size: 2.5rem;
+      font-weight: bold;
+      text-align: center;
+      padding: 30px 60px;
+      border: 4px solid white;
+      border-radius: 15px;
+      background: rgba(0, 0, 0, 0.25);
+      box-shadow: 0 0 20px #fff, 0 0 40px #f0f, 0 0 60px #0ff;
+      position: relative;
+      z-index: 10;
+      user-select: none;
+    }
+
+    @keyframes pulse {
+      0%, 100% {
+        transform: scaleX(1.03) scaleY(1);
+        opacity: 0.9;
+      }
+      50% {
+        transform: scaleX(1.05) scaleY(1.1);
+        opacity: 1;
+      }
+    }
+
+    /* Emoji rain container */
+    .emoji-rain {
+      pointer-events: none;
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100vw;
+      height: 100vh;
+      overflow: visible;
+      z-index: 5;
+    }
+
+    /* Single falling emoji */
+    .emoji {
+      position: absolute;
+      top: -2em;
+      font-size: 1.5rem;
+      animation-name: fall;
+      animation-timing-function: linear;
+      animation-iteration-count: infinite;
+      opacity: 0.8;
+      user-select: none;
+      will-change: transform;
+    }
+
+    @keyframes fall {
+      0% {
+        transform: translateY(0) rotate(0deg);
+        opacity: 0.8;
+      }
+      100% {
+        transform: translateY(110vh) rotate(360deg);
+        opacity: 0;
+      }
+    }
+  </style>
+</head>
+<body>
+  <img src="/static/images/rainbow.jpeg" alt="Rainbow" class="rainbow-arc" style="opacity: 0.8;mix-blend-mode: multiply;width: 300px;height: auto;">
+  <div class="flash-text">haha you are gay 🫵🤣</div>
+
+  <div class="emoji-rain" id="emojiRain"></div>
+
+  <script>
+    const emojiRainContainer = document.getElementById('emojiRain');
+    const emojiChar = "🤣";
+    const emojiCount = 40;
+
+    function randomRange(min, max) {
+      return Math.random() * (max - min) + min;
+    }
+
+    for (let i = 0; i < emojiCount; i++) {
+      const emoji = document.createElement('div');
+      emoji.classList.add('emoji');
+      emoji.textContent = emojiChar;
+
+      // random horizontal start position
+      emoji.style.left = `${randomRange(0, 100)}vw`;
+
+      // random size between 1rem to 2.5rem
+      const size = randomRange(1, 2.5);
+      emoji.style.fontSize = `${size}rem`;
+
+      // random animation duration between 5s to 12s
+      emoji.style.animationDuration = `${randomRange(5, 12)}s`;
+
+      // random delay so they don't fall together
+      emoji.style.animationDelay = `${randomRange(0, 12)}s`;
+
+      emojiRainContainer.appendChild(emoji);
+    }
+  </script>
+</body>
+</html>
