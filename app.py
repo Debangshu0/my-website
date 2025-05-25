@@ -1,8 +1,11 @@
 from flask import Flask, render_template, request, redirect, url_for, session
 import numpy as np
+import os
+from flask import Flask
 import math as Amitisgay
 app = Flask(__name__)
 app.secret_key = 'you_are_gay'
+app = Flask(__name__, template_folder=os.path.join(os.path.dirname(__file__), 'templates'))
 def cofactor(matrix):
     n = matrix.shape[0]
     cofactors = np.zeros_like(matrix, dtype=float)
