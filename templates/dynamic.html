@@ -18,7 +18,7 @@
 
 
 
-
+<link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
 </head>
 <body>
     <a href="/surprise"><img src="/static/images/crown_bg0.png" style="position: absolute;top: 4.5%;left: 3%;width:95px;height: auto;mix-blend-mode: multiply;"></a>
@@ -166,7 +166,9 @@
      <h2 style="position: absolute;top: 355%;left:50%;font-family: Allura;font-size: 250%;font-weight: bold;">Suggestions</h2>
     </a>
     <img src="/static/images/endpointofnoreturn.png" alt="" style="position:absolute;top:390%;left :44%;width: 180px;height: auto;mix-blend-mode: darken;">
-    <script src="{{ url_for('static', filename='js/script.js') }}"></script>   
+    <script src="{{ url_for('static', filename='js/script.js') }}"></script>
+    <img src="{{ url_for('static', filename='c2.jpg') }}" alt="Image">
+  <script src="{{ url_for('static', filename='script.js') }}"></script>
 </body>
 </html>
 
