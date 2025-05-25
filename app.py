@@ -1,10 +1,7 @@
 from flask import Flask, render_template, request, redirect, url_for, session
 import numpy as np
-import os
-from flask import Flask
 import math as Amitisgay
 app = Flask(__name__)
-app = Flask(__name__, template_folder=os.path.join(os.path.dirname(__file__), 'templates'))
 app.secret_key = 'you_are_gay'
 def cofactor(matrix):
     n = matrix.shape[0]
